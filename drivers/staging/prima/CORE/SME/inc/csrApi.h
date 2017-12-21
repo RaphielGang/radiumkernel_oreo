@@ -520,8 +520,6 @@ typedef enum
     eCSR_ROAM_UPDATE_MAX_RATE_IND,
     eCSR_ROAM_LOST_LINK_PARAMS_IND,
     eCSR_ROAM_UPDATE_SCAN_RESULT,
-    eCSR_ROAM_ECSA_BCN_TX_IND,
-    eCSR_ROAM_ECSA_CHAN_CHANGE_RSP,
 }eRoamCmdStatus;
 
 
@@ -1344,7 +1342,6 @@ typedef struct tagCsrRoamInfo
     tDot11fIEVHTOperation vht_operation;
     tDot11fIEHTInfo ht_operation;
     bool reassoc;
-    struct sir_channel_chanege_rsp *ap_chan_change_rsp;
 }tCsrRoamInfo;
 
 typedef struct tagCsrFreqScanInfo
@@ -1781,12 +1778,5 @@ eHalStatus csrSetBand(tHalHandle hHal, eCsrBand eBand);
 ---------------------------------------------------------------------------*/
 eCsrBand csrGetCurrentBand (tHalHandle hHal);
 
-/**
- * csrConvertCBIniValueToPhyCBState() - convert ini CB value to Phy CB val
- * @cb_ini_value: ini value of cb mode
- *
- * Return: phy CB val
- */
-ePhyChanBondState csrConvertCBIniValueToPhyCBState(v_U32_t cb_ini_val);
 #endif
 
