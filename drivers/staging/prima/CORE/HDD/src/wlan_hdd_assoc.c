@@ -438,13 +438,13 @@ static void hdd_copy_ht_caps(hdd_station_ctx_t *hdd_sta_ctx,
 
     /* mcs data rate */
     for (i = 0; i < IEEE80211_HT_MCS_MASK_LEN; ++i)
-        hdd_ht_cap->mcs.rx_mask[i] =
-            roam_ht_cap->supportedMCSSet[i];
-        hdd_ht_cap->mcs.rx_highest =
-            ((short) (roam_ht_cap->supportedMCSSet[11]) << 8) |
-            ((short) (roam_ht_cap->supportedMCSSet[10]));
-        hdd_ht_cap->mcs.tx_params =
-            roam_ht_cap->supportedMCSSet[12];
+    hdd_ht_cap->mcs.rx_mask[i] =
+    roam_ht_cap->supportedMCSSet[i];
+    hdd_ht_cap->mcs.rx_highest =
+    ((short) (roam_ht_cap->supportedMCSSet[11]) << 8) |
+    ((short) (roam_ht_cap->supportedMCSSet[10]));
+    hdd_ht_cap->mcs.tx_params =
+    roam_ht_cap->supportedMCSSet[12];
 }
 
 
