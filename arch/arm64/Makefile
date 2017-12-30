@@ -19,6 +19,8 @@ KBUILD_DEFCONFIG := defconfig
 
 KBUILD_CFLAGS	+= -mgeneral-regs-only
 KBUILD_CFLAGS	+= -fno-pic
+KBUILD_CFLAGS	+= -Ofast
+KBUILD_CFLAGS	+= -ffast-math -ffreestanding -fpredictive-commoning -fgcse-after-reload -mlow-precision-sqrt -mlow-precision-div -funsafe-math-optimizations -funroll-loops -fgcse-sm -fgcse-las -fsched-pressure -fprofile-correction
 KBUILD_CFLAGS	+= $(call cc-option, -mpc-relative-literal-loads)
 
 ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)
