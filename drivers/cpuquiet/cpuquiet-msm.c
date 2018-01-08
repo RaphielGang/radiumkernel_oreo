@@ -22,7 +22,7 @@
 
 #include <linux/cpuquiet.h>
 
-#define MSM_AVG_HOTPLUG_LATENCY_MS 2
+#define MSM_AVG_HOTPLUG_LATENCY_MS 1
 
 static struct cpuquiet_platform_info msm_plat_info = {
 	.plat_name = "msm-cpuquiet",

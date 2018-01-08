@@ -27,8 +27,8 @@
 
 #include "cpuquiet.h"
 
-#define DEFAULT_AVG_HOTPLUG_LATENCY_MS	2
-#define DEFAULT_HOTPLUG_TIMEOUT_MS	100
+#define DEFAULT_AVG_HOTPLUG_LATENCY_MS	1
+#define DEFAULT_HOTPLUG_TIMEOUT_MS	10
 
 unsigned int cpuquiet_nr_max_cpus;
 unsigned int cpuquiet_nr_min_cpus;

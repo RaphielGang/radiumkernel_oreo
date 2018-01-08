@@ -17,10 +17,11 @@ GZFLAGS		:=-9
 
 KBUILD_DEFCONFIG := defconfig
 
+LDFLAGS += -Ofast
+
 KBUILD_CFLAGS	+= -mgeneral-regs-only
-KBUILD_CFLAGS	+= -fno-pic
-KBUILD_CFLAGS	+= -Ofast
-KBUILD_CFLAGS	+= -ffast-math -ffreestanding -fpredictive-commoning -fgcse-after-reload -mlow-precision-sqrt -mlow-precision-div -funsafe-math-optimizations -funroll-loops -fgcse-sm -fgcse-las -fsched-pressure -fprofile-correction
+KBUILD_CFLAGS	+= -pipe -fno-pic -fno-signed-zeros
+KBUILD_CFLAGS	+= -ffast-math -ffreestanding -fpredictive-commoning -fgcse-after-reload -mlow-precision-sqrt -mlow-precision-div -funsafe-math-optimizations -funroll-loops -fgcse-sm -fgcse-las -fsched-pressure -fprofile-correction -Wno-attribute-alias
 KBUILD_CFLAGS	+= $(call cc-option, -mpc-relative-literal-loads)
 
 ifeq ($(CONFIG_CPU_BIG_ENDIAN), y)

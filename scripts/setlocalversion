@@ -30,7 +30,8 @@ fi
 
 scm_version()
 {
-//fuck you
+		# Add sum keku
+			printf '%s' "@EscapeScape-BlameZephoro"
 }
 
 collect_files()

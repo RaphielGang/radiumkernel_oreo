@@ -412,7 +412,7 @@ static int tz_get_target_freq(struct devfreq *devfreq, unsigned long *freq,
 	int context_count = 0;
 #if 1
 	int last_level = priv->bin.last_level;
-//	int max_state_val = devfreq->profile->max_state - 1;
+	int max_state_val = devfreq->profile->max_state - 1;
 #endif
 
 	/* keeps stats.private_data == NULL   */
@@ -496,7 +496,6 @@ static int tz_get_target_freq(struct devfreq *devfreq, unsigned long *freq,
 		level += val;
 		level = max(level, 0);
 		level = min_t(int, level, devfreq->profile->max_state - 1);
-		printk("%s ADRENO jumping level = %d last_level = %d total=%d busy=%d original busy_time=%d \n", __func__, level, priv->bin.last_level, (int)priv->bin.total_time, (int)priv->bin.busy_time, (int)stats.busy_time);
 		priv->bin.last_level = level;
 	} else {
 		if (val) {
