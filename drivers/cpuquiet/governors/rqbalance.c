@@ -50,8 +50,8 @@
 
 #define CPUNAMELEN 8
 
-#define RQ_SAMPLE_TIME_NS	250000000
-#define RQ_AVG_TIMER_RATE_NS	10000000
+#define RQ_SAMPLE_TIME_NS	25000000
+#define RQ_AVG_TIMER_RATE_NS	1000000
 #define RQ_SAMPLE_CAPACITY	(RQ_SAMPLE_TIME_NS / RQ_AVG_TIMER_RATE_NS)
 
 /* Don't put any CPU down prior at least 3x scheduling samplings */
@@ -79,7 +79,7 @@ typedef enum {
 #define USERSPACE_LOW_POWER	1
 
 #define CLUSTER_LITTLE		0
-#define CLUSTER_BIG		1
+#define CLUSTER_BIG			1
 #define MAX_CLUSTERS		2
 
 struct idle_info {
@@ -98,14 +98,14 @@ static bool soc_is_hmp;
 static unsigned int available_clusters = 0;
 
 /* configurable parameters */
-static unsigned int  balance_level = 60;
+static unsigned int  balance_level = 50;
 static unsigned int  idle_bottom_freq[MAX_CLUSTERS];
 static unsigned int  idle_top_freq[MAX_CLUSTERS];
 static unsigned int  num_of_cores[MAX_CLUSTERS];
 static unsigned long up_delay;
 static unsigned long down_delay;
 static unsigned long last_change_time;
-static unsigned int  load_sample_rate = 20; /* msec */
+static unsigned int  load_sample_rate = 10; /* msec */
 static unsigned int  userspace_suspend_state = 0;
 static struct workqueue_struct *rqbalance_wq;
 static struct delayed_work rqbalance_work;
